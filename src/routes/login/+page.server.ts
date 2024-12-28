@@ -9,7 +9,7 @@ import { JWT_SECRET } from '$env/static/private';
 
 export const load: PageServerLoad = async (event) => {
 	if (event.locals.user) {
-		return redirect(302, '/');
+		return redirect(302, '/admin/dashboard');
 	}
 	return {};
 };

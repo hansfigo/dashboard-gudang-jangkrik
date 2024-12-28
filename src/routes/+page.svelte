@@ -5,7 +5,7 @@
 	const items = [
 		{ name: 'Home', url: '/' },
 		{ name: 'Features', url: '/#' },
-		{ name: 'GitHub', url: 'https://github.com/seimbang-in' },
+		{ name: 'GitHub', url: '/#' },
 		{ name: 'Contact', url: '/#' }
 	];
 </script>
@@ -30,23 +30,19 @@
 <div class="flex h-screen items-center justify-center">
 	<main class="container flex w-full items-center justify-between px-12">
 		<div class="col flex flex-col items-start justify-start">
-			<p class="text-xl">Seimbang-in</p>
-			<h1 class="text-[3rem] font-black">Smart Money, Balanced Money</h1>
+			<p class="text-xl">Dashboard Manajement Gudang Jangkrik</p>
+			<h1 class="text-[3rem] font-black">TEST</h1>
 			<br />
-			<Button
-				class="bg-emerald-400 text-lg transition-all duration-300 ease-in-out hover:bg-emerald-500"
-				>Try it now</Button
-			>
+			<Button href="/login">Try it now</Button>
 		</div>
 		<div>
-			<!-- svelte-ignore a11y_img_redundant_alt -->
 			<img src="./hero-img.png" alt="Hero Image" class="floating-img" />
 		</div>
 	</main>
 </div>
 
 <footer class="fixed bottom-4 flex w-full justify-center">
-	<p>© 2024 Seimbang-in. All rights reserved.</p>
+	<p>© 2024 figomager All rights reserved.</p>
 </footer>
 
 <style>
