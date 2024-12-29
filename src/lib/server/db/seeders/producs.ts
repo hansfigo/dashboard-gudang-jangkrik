@@ -4,10 +4,10 @@ import { products } from '../schema'; // Ganti dengan path ke schema yang sesuai
 
 const seedProducts = async () => {
 	const productData = [
-		{ name: 'Jangkrik Genggong' },
-		{ name: 'Jangkrik Bering' },
-		{ name: 'Ulat Jerman' },
-		{ name: 'Ulat Hongkong' }
+		{ id: 1, name: 'Jangkrik Genggong' },
+		{ id: 2, name: 'Jangkrik Bering' },
+		{ id: 3, name: 'Ulat Jerman' },
+		{ id: 4, name: 'Ulat Hongkong' }
 	];
 
 	try {

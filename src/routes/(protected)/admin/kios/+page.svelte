@@ -1,39 +1,26 @@
 <script lang="ts">
-	import {
-		Table,
-		TableBody,
-		TableBodyCell,
-		TableBodyRow,
-		TableHead,
-		TableHeadCell,
-		Button 
-	} from 'flowbite-svelte';
 	import type { PageData } from './$types';
+	import AdminTableCrud from '$lib/components/AdminTableCrud.svelte';
+	import type { TableCrudAction } from '$lib/types';
+	import { Button } from 'flowbite-svelte';
 
 	let { data }: { data: PageData } = $props();
+
+	const columns = [
+		{ label: 'Name', key: 'name' },
+		{ label: 'Alamat', key: 'address' },
+		{ label: 'No Telp', key: 'phone' }
+	];
+
+	const actions: TableCrudAction[] = [
+		{ label: 'Edit', color: 'green', href: 'kios/update/{id}' },
+		{ label: 'Delete', color: 'red', href: '' }
+	];
 </script>
 
-<h1 class="mb-4 text-2xl font-bold">{data.title}</h1>
+<div class="flex justify-between w-full mb-4 items-center">
+	<h1 class="text-2xl font-bold">{data.title}</h1>
+	<Button href="kios/add">Tambah +</Button>
+</div>
 
-<!-- Store Table -->
-<Table>
-	<TableHead>
-		<TableHeadCell>Name</TableHeadCell>
-		<TableHeadCell>Address</TableHeadCell>
-		<TableHeadCell>Phone</TableHeadCell>
-		<TableHeadCell>Actions</TableHeadCell>
-	</TableHead>
-	<TableBody tableBodyClass="divide-y">
-		{#each data.stores as store}
-			<TableBodyRow>
-				<TableBodyCell>{store.name}</TableBodyCell>
-				<TableBodyCell>{store.address}</TableBodyCell>
-				<TableBodyCell>{store.phone}</TableBodyCell>
-				<TableBodyCell>
-					<Button href="kios/update/{store.id}" color="green">Edit</Button>
-					<Button href="kios/delete/{store.id}" color="red">Delete</Button>
-				</TableBodyCell>
-			</TableBodyRow>
-		{/each}
-	</TableBody>
-</Table>
+<AdminTableCrud deleteAction="/admin/kios/delete/" {actions} {columns} data={data.stores} />

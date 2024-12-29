@@ -5,31 +5,20 @@
 		TableBodyCell,
 		TableBodyRow,
 		TableHead,
-		TableHeadCell,
-		Button
+		TableHeadCell
 	} from 'flowbite-svelte';
 	import AdminDeleteButton from './AdminDeleteButton.svelte';
 
-	export let columns: { label: string; key: string }[] = []; // Menyimpan nama kolom dan key untuk data
-	export let data: Record<string, any>[] = []; // Data tabel
+	export let columns: { label: string; key: string }[] = [];
+	export let data: Record<string, any>[] = [];
 	export let actions: {
 		label: string;
-		color:
-			| 'blue'
-			| 'green'
-			| 'red'
-			| 'yellow'
-			| 'purple'
-			| 'light'
-			| 'dark'
-			| 'primary'
-			| 'none'
-			| 'alternative';
 		href: string;
-	}[] = []; // Aksi CRUD seperti Edit, Delete
+	}[] = [];
+	export let deleteAction: string = '';
 </script>
 
-<Table>
+<Table shadow striped={true}>
 	<TableHead>
 		{#each columns as column}
 			<TableHeadCell>{column.label}</TableHeadCell>
@@ -42,16 +31,17 @@
 				{#each columns as column}
 					<TableBodyCell>{item[column.key]}</TableBodyCell>
 				{/each}
-				<TableBodyCell>
+				<TableBodyCell class="flex gap-2">
 					{#each actions as action}
-						{#if action.color === 'red'}
+						{#if action.label === 'Delete'}
 							<AdminDeleteButton
-								action="produk/delete/{item.id}/"
+								action="{deleteAction}{item.id}/"
 								message="Are you sure you want to delete this item?"
 							/>
 						{:else}
-							<Button href={action.href.replace('{id}', item.id)} color={action.color}
-								>{action.label}</Button
+							<a
+								class="font-medium text-primary-500 hover:underline dark:text-primary-600"
+								href={action.href.replace('{id}', item.id)}>{action.label}</a
 							>
 						{/if}
 					{/each}

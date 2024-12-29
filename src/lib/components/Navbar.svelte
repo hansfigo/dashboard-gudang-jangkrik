@@ -1,4 +1,5 @@
 <script>
+	import { PRODUCT_NAME } from '$lib/constant';
 	import {
 		Avatar,
 		DarkMode,
@@ -25,7 +26,7 @@
 <Navbar>
 	<NavBrand href="/admin/dashboard">
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-			>Gudang Jangkrik</span
+			>{PRODUCT_NAME}</span
 		>
 	</NavBrand>
 	<div class="flex items-center md:order-2">

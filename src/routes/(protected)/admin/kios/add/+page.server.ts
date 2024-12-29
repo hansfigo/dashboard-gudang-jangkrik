@@ -22,6 +22,8 @@ export const actions = {
 			phone,
 			googlemapslink
 		});
+
+		throw redirect(303, '/admin/kios');
 	}
 
 	// Update a store

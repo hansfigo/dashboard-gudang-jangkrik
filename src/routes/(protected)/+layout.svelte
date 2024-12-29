@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-	import { ChartPieSolid, GridSolid, MailBoxSolid } from 'flowbite-svelte-icons';
+	import { ChartPieOutline, ChartPieSolid, GridSolid, InboxOutline, MailBoxOutline, MailBoxSolid, ShoppingBagOutline, StoreOutline, StoreSolid, TruckOutline } from 'flowbite-svelte-icons';
 	import { page } from '$app/stores';
 	import Navbar from '$lib/components/Navbar.svelte';
 
@@ -19,22 +19,27 @@
 		{
 			href: '/admin/dashboard',
 			label: 'Dashboard',
-			icon: ChartPieSolid
+			icon:  ChartPieOutline
 		},
 		{
 			href: '/admin/kios',
 			label: 'Kios',
-			icon: GridSolid
+			icon: StoreOutline
+		},
+		{
+			href: '/admin/pengiriman',
+			label: 'Pengiriman',
+			icon: TruckOutline
 		},
 		{
 			href: '/admin/stok-harian',
 			label: 'Stok Harian',
-			icon: MailBoxSolid
+			icon: InboxOutline
 		},
 		{
 			href: '/admin/produk',
 			label: 'Produk',
-			icon: MailBoxSolid
+			icon: ShoppingBagOutline
 		}
 	];
 </script>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Button, Card } from 'flowbite-svelte';
+	import { Card } from 'flowbite-svelte';
 	import type { PageData } from './$types';
-	import { formatToRupiah } from '$lib/helper/formatter';
-	import Chart from '$lib/components/Chart.svelte';
 
 	let { data }: { data: PageData } = $props();
+
+	console.log(data.todayStock, data.totalDelivery, data.totalRevenue);
 </script>
 
 <svelte:head>
@@ -18,8 +18,7 @@
 				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					Total Transaction Today
 				</h5>
-				<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-				</p>
+				<p class="font-normal leading-tight text-gray-700 dark:text-gray-400"></p>
 			</Card>
 		</div>
 
@@ -28,8 +27,7 @@
 				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 					Sum Transaction Today
 				</h5>
-				<p class="font-normal leading-tight text-gray-700 dark:text-gray-400">
-				</p>
+				<p class="font-normal leading-tight text-gray-700 dark:text-gray-400"></p>
 			</Card>
 		</div>
 	</div>

@@ -12,7 +12,14 @@
 	}
 </script>
 
-<Button title="Delete Post" color="red" onclick={() => dialog.show()}>Delete</Button>
+<button
+	type="button"
+	class="text-danger-500 dark:text-danger-600 font-medium hover:underline"
+	title="Delete Post"
+	onclick={() => dialog.show()}
+>
+	Delete
+</button>
 
 <dialog
 	bind:this={dialog}
